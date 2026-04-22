@@ -1,8 +1,11 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# ============================================================
+# PhysioLink – .gitignore
+# Next.js 16 · TypeScript · Tailwind CSS 4
+# ============================================================
 
-# dependencies
-/node_modules
-/.pnp
+# ---- Dependencies ------------------------------------------
+node_modules/
+.pnp
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -10,32 +13,54 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
+# ---- Next.js build output ----------------------------------
+.next/
+out/
+build/
 
-# next.js
-/.next/
-/out/
+# ---- Test & coverage ---------------------------------------
+coverage/
+.nyc_output/
 
-# production
-/build
+# ---- Environment variables ---------------------------------
+# Never commit secrets. Use your host's env-var UI instead.
+.env
+.env.*
+!.env.example
 
-# misc
-.DS_Store
-*.pem
-
-# debug
+# ---- Logs --------------------------------------------------
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
+pnpm-debug.log*
+*.log
 
-# env files (can opt-in for committing if needed)
-.env*
+# ---- OS / editor artefacts ---------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.pem
 
-# vercel
-.vercel
+# ---- IDEs & editors ----------------------------------------
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# typescript
+# ---- TypeScript --------------------------------------------
 *.tsbuildinfo
 next-env.d.ts
+
+# ---- Deployment platforms ----------------------------------
+.vercel/
+
+# ---- Project reference documents (not for production) -----
+physiolink_prd.html
+physiolink_brand_ui.html
+
+# ---- Misc --------------------------------------------------
+*.tgz
+*.zip

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useForm, useFieldArray } from "react-hook-form";
+import { useForm, useFieldArray, type Resolver } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import {
@@ -328,9 +328,10 @@ export default function ExerciseBuilderPage() {
     control,
     watch,
     trigger,
+    setValue,
     formState: { errors },
   } = useForm<PlanData>({
-    resolver: zodResolver(planSchema),
+    resolver: zodResolver(planSchema) as Resolver<PlanData>,
     defaultValues: {
       patientId: "",
       planName: "",
@@ -469,14 +470,13 @@ export default function ExerciseBuilderPage() {
                       <button
                         key={w}
                         type="button"
-                        onClick={() => {}}
+                        onClick={() => setValue("durationWeeks", w)}
                         className={cn(
                           "flex-1 py-2 rounded-[8px] text-[12px] font-medium border transition-all cursor-pointer",
                           formData.durationWeeks === w
                             ? "bg-[#0d9488] text-white border-[#0d9488]"
                             : "bg-white text-[#64748b] border-[#e2e8f0] hover:border-[#0d9488]"
                         )}
-                        {...{ onClick: () => { void 0; } }}
                       >
                         {w}w
                       </button>

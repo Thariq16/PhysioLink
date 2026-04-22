@@ -138,7 +138,7 @@ export default function PatientDetailPage() {
             <div className="text-[14px] font-semibold text-[#1e293b]">{patient.activePlan}</div>
           </div>
           <div>
-            <div className="text-[11px] font-bold uppercase tracking-widest text-[#94a3b8] mb-1">Today's Progress</div>
+            <div className="text-[11px] font-bold uppercase tracking-widest text-[#94a3b8] mb-1">Today&apos;s Progress</div>
             <div className="text-[14px] font-semibold text-[#1e293b]">{doneToday}/{exercises.length} exercises</div>
           </div>
           <div>

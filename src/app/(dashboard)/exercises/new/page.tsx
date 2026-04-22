@@ -342,6 +342,7 @@ export default function ExerciseBuilderPage() {
   });
 
   const { fields, append, remove } = useFieldArray({ control, name: "exercises" });
+  // eslint-disable-next-line react-hooks/incompatible-library
   const formData = watch();
 
   async function nextStep() {

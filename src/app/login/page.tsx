@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "sonner";
-import { Mail, Phone, Eye, EyeOff, Stethoscope } from "lucide-react";
+import { Mail, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 const schema = z.object({

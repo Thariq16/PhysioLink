@@ -12,7 +12,6 @@ import {
   ArrowRight,
   Stethoscope,
   ChevronLeft,
-  Mail,
   Phone,
   MapPin,
   Link,
@@ -20,7 +19,6 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
@@ -430,7 +428,7 @@ function InviteStep({ onBack }: { onBack: () => void }) {
             { label: "Profile", done: true },
             { label: "Clinic",  done: true },
             { label: "Patient", done: true },
-          ].map(({ label, done }) => (
+          ].map(({ label }) => (
             <div key={label} className="bg-[#f0fdf9] border border-[#99f6e4] rounded-[10px] p-3 text-center">
               <div className="w-7 h-7 bg-[#0d9488] rounded-full flex items-center justify-center mx-auto mb-1">
                 <Check className="w-4 h-4 text-white" />

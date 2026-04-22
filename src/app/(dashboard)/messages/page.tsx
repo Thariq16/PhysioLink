@@ -5,7 +5,6 @@ import {
   Search,
   Paperclip,
   SendHorizontal,
-  X,
   Image as ImageIcon,
   FileText,
   MoreVertical,
@@ -202,16 +201,16 @@ export default function MessagesPage() {
     }
   }
 
-  // Mark as read on open
-  useEffect(() => {
+  // Mark thread as read — called when switching threads
+  function markAsRead(id: string) {
     setThreads((prev) =>
       prev.map((t) =>
-        t.id === activeId
+        t.id === id
           ? { ...t, unread: 0, messages: t.messages.map((m) => ({ ...m, read: true })) }
           : t
       )
     );
-  }, [activeId]);
+  }
 
   const totalUnread = threads.reduce((s, t) => s + t.unread, 0);
 
@@ -254,7 +253,7 @@ export default function MessagesPage() {
             {filteredThreads.map((thread) => (
               <button
                 key={thread.id}
-                onClick={() => setActiveId(thread.id)}
+                onClick={() => { setActiveId(thread.id); markAsRead(thread.id); }}
                 className={cn(
                   "w-full flex items-start gap-3 px-3.5 py-3 text-left border-b border-[#f1f5f9] transition-colors cursor-pointer",
                   thread.id === activeId

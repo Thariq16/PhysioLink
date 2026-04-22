@@ -15,7 +15,6 @@ import {
   X,
   Dumbbell,
   User,
-  Eye,
   Send,
 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";

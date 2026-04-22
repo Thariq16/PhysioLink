@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import {
-  ArrowLeft,
   Phone,
   Mail,
   MessageSquare,
@@ -11,11 +10,8 @@ import {
   Dumbbell,
   CreditCard,
   LayoutDashboard,
-  TrendingUp,
   Clock,
   CheckCircle2,
-  XCircle,
-  Video,
 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -223,7 +219,7 @@ export default function PatientDetailPage() {
           {/* Exercise summary */}
           <div>
             <div className="flex items-center justify-between mb-3">
-              <h3 className="text-[11px] font-bold uppercase tracking-wider text-[#94a3b8]">
+              <h3 className="text-[11px] font-bold uppercase tracking-wider text-[#94a3b8] mb-1">
                 TODAY&apos;S EXERCISES
               </h3>
               <span className="text-[12px] text-[#0d9488] font-semibold">{doneToday}/{exercises.length} done</span>

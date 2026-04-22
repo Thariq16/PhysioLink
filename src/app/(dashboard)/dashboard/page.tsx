@@ -84,7 +84,7 @@ export default function DashboardPage() {
             className="text-[28px] font-bold text-[#1e293b] leading-tight"
             style={{ fontFamily: "var(--font-syne, Syne, sans-serif)" }}
           >
-            {greeting}, Dr. Priya
+            {greeting}, Dr. Theebaluxmy
           </h1>
           <p className="text-[14px] text-[#64748b] mt-0.5">
             {now.toLocaleDateString("en-US", {

@@ -95,14 +95,14 @@ function ClinicTab() {
       <div className="flex items-center gap-5 pb-6 border-b border-[#f1f5f9]">
         <div className="relative">
           <div className="w-20 h-20 rounded-2xl bg-[#0d9488] flex items-center justify-center">
-            <span className="text-white text-[26px] font-bold" style={{ fontFamily: "var(--font-syne, Syne, sans-serif)" }}>P</span>
+            <span className="text-white text-[26px] font-bold" style={{ fontFamily: "var(--font-syne, Syne, sans-serif)" }}>T</span>
           </div>
           <button className="absolute -bottom-1.5 -right-1.5 w-7 h-7 bg-white border-2 border-[#e2e8f0] rounded-full flex items-center justify-center hover:border-[#0d9488] transition-colors cursor-pointer shadow-sm">
             <Camera className="w-3.5 h-3.5 text-[#64748b]" />
           </button>
         </div>
         <div>
-          <p className="text-[15px] font-bold text-[#1e293b]">Dr. Priya Rathnayake</p>
+          <p className="text-[15px] font-bold text-[#1e293b]">Dr. Theebaluxmy Thangarasu</p>
           <p className="text-[13px] text-[#64748b] mt-0.5">Sports & Rehabilitation Physiotherapy</p>
           <Badge variant="success" className="mt-2">Verified practitioner</Badge>
         </div>
@@ -112,11 +112,11 @@ function ClinicTab() {
       <div>
         <h3 className="text-[13px] font-bold text-[#94a3b8] uppercase tracking-wider mb-4">Personal Information</h3>
         <div className="grid grid-cols-2 gap-4">
-          <Field label="First name"><Input defaultValue="Priya" /></Field>
-          <Field label="Last name"><Input defaultValue="Rathnayake" /></Field>
+          <Field label="First name"><Input defaultValue="Theebaluxmy" /></Field>
+          <Field label="Last name"><Input defaultValue="Thangarasu" /></Field>
           <Field label="Specialisation"><Input defaultValue="Sports & Rehabilitation" /></Field>
           <Field label="Registration number" hint="Your regulatory body registration ID"><Input defaultValue="SL-PHYSIO-004821" /></Field>
-          <Field label="Email"><Input type="email" defaultValue="dr.priya@physiolink.lk" /></Field>
+          <Field label="Email"><Input type="email" defaultValue="dr.theebaluxmy@physiolink.lk" /></Field>
           <Field label="Phone"><Input type="tel" defaultValue="+94 77 234 5678" /></Field>
         </div>
       </div>
@@ -125,7 +125,7 @@ function ClinicTab() {
       <div>
         <h3 className="text-[13px] font-bold text-[#94a3b8] uppercase tracking-wider mb-4">Clinic Details</h3>
         <div className="grid grid-cols-2 gap-4">
-          <Field label="Clinic name" className="col-span-2"><Input defaultValue="Rathnayake Physiotherapy Centre" /></Field>
+          <Field label="Clinic name" className="col-span-2"><Input defaultValue="Thangarasu Physiotherapy Centre" /></Field>
           <Field label="Address line 1"><Input defaultValue="45 Galle Road" /></Field>
           <Field label="Address line 2"><Input defaultValue="Colombo 03" /></Field>
           <Field label="City"><Input defaultValue="Colombo" /></Field>

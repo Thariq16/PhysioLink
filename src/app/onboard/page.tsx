@@ -193,10 +193,10 @@ function ProfileStep({ onNext, onBack }: { onNext: () => void; onBack: () => voi
 
       <div className="grid grid-cols-2 gap-4">
         <FormField label="First name" error={errors.firstName?.message}>
-          <TextInput {...register("firstName")} placeholder="Priya" />
+          <TextInput {...register("firstName")} placeholder="Theebaluxmy" />
         </FormField>
         <FormField label="Last name" error={errors.lastName?.message}>
-          <TextInput {...register("lastName")} placeholder="Rathnayake" />
+          <TextInput {...register("lastName")} placeholder="Thangarasu" />
         </FormField>
       </div>
 
@@ -245,7 +245,7 @@ function ClinicStep({ onNext, onBack }: { onNext: () => void; onBack: () => void
       </div>
 
       <FormField label="Clinic name" error={errors.clinicName?.message}>
-        <TextInput {...register("clinicName")} placeholder="Rathnayake Physiotherapy Centre" />
+        <TextInput {...register("clinicName")} placeholder="Thangarasu Physiotherapy Centre" />
       </FormField>
 
       <FormField label="Street address" error={errors.address?.message}>

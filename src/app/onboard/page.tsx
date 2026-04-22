@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, type Resolver } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import {
@@ -167,7 +167,7 @@ function WelcomeStep({ onNext }: { onNext: () => void }) {
 /* ─── Step 1: Profile ─── */
 function ProfileStep({ onNext, onBack }: { onNext: () => void; onBack: () => void }) {
   const { register, handleSubmit, formState: { errors } } = useForm<ProfileData>({
-    resolver: zodResolver(profileSchema),
+    resolver: zodResolver(profileSchema) as Resolver<ProfileData>,
     defaultValues: { firstName: "", lastName: "", specialisation: "", regNumber: "", yearsExp: 1 },
   });
 
@@ -231,7 +231,7 @@ function ProfileStep({ onNext, onBack }: { onNext: () => void; onBack: () => voi
 /* ─── Step 2: Clinic ─── */
 function ClinicStep({ onNext, onBack }: { onNext: () => void; onBack: () => void }) {
   const { register, handleSubmit, formState: { errors } } = useForm<ClinicData>({
-    resolver: zodResolver(clinicSchema),
+    resolver: zodResolver(clinicSchema) as Resolver<ClinicData>,
     defaultValues: { clinicName: "", address: "", city: "Colombo", phone: "", website: "" },
   });
 
@@ -397,7 +397,7 @@ function InviteStep({ onBack }: { onBack: () => void }) {
   const [sending, setSending] = useState(false);
 
   const { register, handleSubmit, formState: { errors } } = useForm<InviteData>({
-    resolver: zodResolver(inviteSchema),
+    resolver: zodResolver(inviteSchema) as Resolver<InviteData>,
     defaultValues: { patientName: "", patientPhone: "", condition: "" },
   });
 

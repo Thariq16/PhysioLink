@@ -66,9 +66,9 @@ function Toggle({ on, onChange }: { on: boolean; onChange: (v: boolean) => void 
 }
 
 /* ─────────────────── Field wrapper ───────────────────────────── */
-function Field({ label, hint, children }: { label: string; hint?: string; children: React.ReactNode }) {
+function Field({ label, hint, className, children }: { label: string; hint?: string; className?: string; children: React.ReactNode }) {
   return (
-    <div>
+    <div className={className}>
       <label className="block text-[12px] font-semibold text-[#475569] mb-1.5 tracking-wide">{label}</label>
       {children}
       {hint && <p className="text-[11px] text-[#94a3b8] mt-1">{hint}</p>}

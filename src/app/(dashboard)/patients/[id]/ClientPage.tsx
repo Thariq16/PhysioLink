@@ -24,11 +24,11 @@ import { cn } from "@/lib/utils";
 // ── Mock patient data ──
 const patient = {
   id: "p1",
-  name: "Ravi Jayasuriya",
-  initials: "RJ",
+  name: "Thariq Hamad",
+  initials: "TH",
   dob: "14 Mar 1990 (36 yrs)",
   phone: "+94 77 234 5678",
-  email: "ravi.j@gmail.com",
+  email: "Thariq@thariqhamad.com",
   injurySummary: "Grade 3 ACL tear on right knee following football match injury. Post-surgical recovery commenced 6 weeks ago. Good range of motion improving steadily.",
   treatmentNotes: "Patient is responding well. Increase quad strength exercises from week 8. Pain level reported at 2/10 during last session.",
   adherence: 86,
@@ -37,28 +37,28 @@ const patient = {
 };
 
 const appointments = [
-  { date: "16 Apr 2026", time: "10:00 AM", duration: 45, status: "scheduled", paid: true,  amount: "LKR 3,500" },
-  { date: "9 Apr 2026",  time: "10:00 AM", duration: 45, status: "completed", paid: true,  amount: "LKR 3,500" },
-  { date: "2 Apr 2026",  time: "10:00 AM", duration: 45, status: "completed", paid: true,  amount: "LKR 3,500" },
+  { date: "16 Apr 2026", time: "10:00 AM", duration: 45, status: "scheduled", paid: true, amount: "LKR 3,500" },
+  { date: "9 Apr 2026", time: "10:00 AM", duration: 45, status: "completed", paid: true, amount: "LKR 3,500" },
+  { date: "2 Apr 2026", time: "10:00 AM", duration: 45, status: "completed", paid: true, amount: "LKR 3,500" },
   { date: "26 Mar 2026", time: "10:00 AM", duration: 45, status: "completed", paid: false, amount: "LKR 3,500" },
 ];
 
 const exercises = [
-  { name: "Quad stretch",    sets: 3, reps: 12, freq: "Daily",     done: true },
-  { name: "Hip bridge",      sets: 3, reps: 10, freq: "Daily",     done: true },
-  { name: "Calf raises",     sets: 2, reps: 15, freq: "Daily",     done: false },
-  { name: "Leg press",       sets: 3, reps: 8,  freq: "3x / week", done: false },
-  { name: "Side step band",  sets: 2, reps: 20, freq: "3x / week", done: true },
+  { name: "Quad stretch", sets: 3, reps: 12, freq: "Daily", done: true },
+  { name: "Hip bridge", sets: 3, reps: 10, freq: "Daily", done: true },
+  { name: "Calf raises", sets: 2, reps: 15, freq: "Daily", done: false },
+  { name: "Leg press", sets: 3, reps: 8, freq: "3x / week", done: false },
+  { name: "Side step band", sets: 2, reps: 20, freq: "3x / week", done: true },
 ];
 
 type TabId = "overview" | "appointments" | "exercises" | "messages" | "payments";
 
 const TAB_DEFS: { id: TabId; label: string; icon: React.ElementType }[] = [
-  { id: "overview",      label: "Overview",      icon: LayoutDashboard },
-  { id: "appointments", label: "Appointments",  icon: CalendarDays    },
-  { id: "exercises",    label: "Exercises",     icon: Dumbbell        },
-  { id: "messages",     label: "Messages",      icon: MessageSquare   },
-  { id: "payments",     label: "Payments",      icon: CreditCard      },
+  { id: "overview", label: "Overview", icon: LayoutDashboard },
+  { id: "appointments", label: "Appointments", icon: CalendarDays },
+  { id: "exercises", label: "Exercises", icon: Dumbbell },
+  { id: "messages", label: "Messages", icon: MessageSquare },
+  { id: "payments", label: "Payments", icon: CreditCard },
 ];
 
 export function PatientDetailClient() {
@@ -169,80 +169,79 @@ export function PatientDetailClient() {
         </div>
 
         {activeTab === "overview" && (
-        <div className="p-6 grid grid-cols-2 gap-6">
-          {/* Injury summary */}
-          <div>
-            <h3
-              className="text-[14px] font-bold text-[#1e293b] mb-2 uppercase tracking-wider text-[11px] text-[#94a3b8]"
-              style={{ fontFamily: "var(--font-syne, Syne, sans-serif)" }}
-            >
-              INJURY SUMMARY
-            </h3>
-            <p className="text-[13.5px] text-[#64748b] leading-relaxed">
-              {patient.injurySummary}
-            </p>
-          </div>
-
-          {/* Treatment notes */}
-          <div>
-            <h3 className="text-[11px] font-bold uppercase tracking-wider text-[#94a3b8] mb-2">
-              TREATMENT NOTES
-            </h3>
-            <p className="text-[13.5px] text-[#64748b] leading-relaxed">
-              {patient.treatmentNotes}
-            </p>
-          </div>
-
-          {/* Upcoming appointment */}
-          <div className="bg-[#f0fdf9] border border-[#99f6e4] rounded-[12px] p-4">
-            <div className="flex items-center gap-2 mb-2">
-              <CalendarDays className="w-4 h-4 text-[#0d9488]" />
-              <span className="text-[12px] font-bold text-[#0f766e] uppercase tracking-wider">
-                Next Appointment
-              </span>
-            </div>
-            <div className="text-[16px] font-bold text-[#1e293b]"
-              style={{ fontFamily: "var(--font-syne, Syne, sans-serif)" }}>
-              Wednesday, 16 April 2026
-            </div>
-            <div className="text-[13px] text-[#64748b] mt-0.5 flex items-center gap-1">
-              <Clock className="w-3.5 h-3.5" /> 10:00 AM · 45 minutes
-            </div>
-            <div className="flex gap-2 mt-3">
-              <Button variant="primary" size="sm" onClick={() => toast.info("Reschedule dialog opens here")}>Reschedule</Button>
-              <Button variant="danger" size="sm" onClick={() => toast.error("Appointment cancellation requires confirmation in production")}>
-                Cancel
-              </Button>
-            </div>
-          </div>
-
-          {/* Exercise summary */}
-          <div>
-            <div className="flex items-center justify-between mb-3">
-              <h3 className="text-[11px] font-bold uppercase tracking-wider text-[#94a3b8] mb-1">
-                TODAY&apos;S EXERCISES
+          <div className="p-6 grid grid-cols-2 gap-6">
+            {/* Injury summary */}
+            <div>
+              <h3
+                className="text-[14px] font-bold text-[#1e293b] mb-2 uppercase tracking-wider text-[11px] text-[#94a3b8]"
+                style={{ fontFamily: "var(--font-syne, Syne, sans-serif)" }}
+              >
+                INJURY SUMMARY
               </h3>
-              <span className="text-[12px] text-[#0d9488] font-semibold">{doneToday}/{exercises.length} done</span>
+              <p className="text-[13.5px] text-[#64748b] leading-relaxed">
+                {patient.injurySummary}
+              </p>
             </div>
-            <div className="space-y-2">
-              {exercises.map((ex) => (
-                <div key={ex.name} className="flex items-center gap-3">
-                  <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${
-                    ex.done ? "bg-[#0d9488]" : "border-2 border-[#cbd5e1]"
-                  }`}>
-                    {ex.done && <CheckCircle2 className="w-3.5 h-3.5 text-white" />}
+
+            {/* Treatment notes */}
+            <div>
+              <h3 className="text-[11px] font-bold uppercase tracking-wider text-[#94a3b8] mb-2">
+                TREATMENT NOTES
+              </h3>
+              <p className="text-[13.5px] text-[#64748b] leading-relaxed">
+                {patient.treatmentNotes}
+              </p>
+            </div>
+
+            {/* Upcoming appointment */}
+            <div className="bg-[#f0fdf9] border border-[#99f6e4] rounded-[12px] p-4">
+              <div className="flex items-center gap-2 mb-2">
+                <CalendarDays className="w-4 h-4 text-[#0d9488]" />
+                <span className="text-[12px] font-bold text-[#0f766e] uppercase tracking-wider">
+                  Next Appointment
+                </span>
+              </div>
+              <div className="text-[16px] font-bold text-[#1e293b]"
+                style={{ fontFamily: "var(--font-syne, Syne, sans-serif)" }}>
+                Wednesday, 16 April 2026
+              </div>
+              <div className="text-[13px] text-[#64748b] mt-0.5 flex items-center gap-1">
+                <Clock className="w-3.5 h-3.5" /> 10:00 AM · 45 minutes
+              </div>
+              <div className="flex gap-2 mt-3">
+                <Button variant="primary" size="sm" onClick={() => toast.info("Reschedule dialog opens here")}>Reschedule</Button>
+                <Button variant="danger" size="sm" onClick={() => toast.error("Appointment cancellation requires confirmation in production")}>
+                  Cancel
+                </Button>
+              </div>
+            </div>
+
+            {/* Exercise summary */}
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-[11px] font-bold uppercase tracking-wider text-[#94a3b8] mb-1">
+                  TODAY&apos;S EXERCISES
+                </h3>
+                <span className="text-[12px] text-[#0d9488] font-semibold">{doneToday}/{exercises.length} done</span>
+              </div>
+              <div className="space-y-2">
+                {exercises.map((ex) => (
+                  <div key={ex.name} className="flex items-center gap-3">
+                    <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${ex.done ? "bg-[#0d9488]" : "border-2 border-[#cbd5e1]"
+                      }`}>
+                      {ex.done && <CheckCircle2 className="w-3.5 h-3.5 text-white" />}
+                    </div>
+                    <span className={`text-[13px] ${ex.done ? "text-[#94a3b8] line-through" : "text-[#1e293b] font-medium"}`}>
+                      {ex.name}
+                    </span>
+                    <span className="ml-auto text-[11px] text-[#94a3b8] font-mono">
+                      {ex.sets}×{ex.reps}
+                    </span>
                   </div>
-                  <span className={`text-[13px] ${ex.done ? "text-[#94a3b8] line-through" : "text-[#1e293b] font-medium"}`}>
-                    {ex.name}
-                  </span>
-                  <span className="ml-auto text-[11px] text-[#94a3b8] font-mono">
-                    {ex.sets}×{ex.reps}
-                  </span>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-        </div>
         )}
 
         {activeTab === "appointments" && (
@@ -273,7 +272,7 @@ export function PatientDetailClient() {
               {exercises.map((ex) => (
                 <div key={ex.name} className="flex items-center justify-between bg-[#f8fafc] border border-[#e2e8f0] rounded-[12px] px-4 py-3">
                   <div className="flex items-center gap-3">
-                    <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${ex.done ? "bg-[#0d9488]" : "border-2 border-[#cbd5e1]"}` }>
+                    <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${ex.done ? "bg-[#0d9488]" : "border-2 border-[#cbd5e1]"}`}>
                       {ex.done && <CheckCircle2 className="w-4 h-4 text-white" />}
                     </div>
                     <div>

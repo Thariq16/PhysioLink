@@ -230,10 +230,10 @@ export default function MessagesPage() {
       </div>
 
       {/* ── Split pane ── */}
-      <div className="bg-white border border-[#e2e8f0] rounded-[14px] overflow-hidden flex" style={{ height: "calc(100vh - 220px)", minHeight: "560px" }}>
+      <div className="bg-white border border-[#e2e8f0] rounded-[14px] overflow-hidden flex flex-col md:flex-row" style={{ height: "calc(100vh - 220px)", minHeight: "560px" }}>
 
         {/* ── Left: Thread list ── */}
-        <div className="w-[280px] flex-shrink-0 border-r border-[#e2e8f0] flex flex-col">
+        <div className="w-full md:w-[280px] h-[240px] md:h-auto flex-shrink-0 border-b md:border-b-0 md:border-r border-[#e2e8f0] flex flex-col">
           {/* Search */}
           <div className="p-3 border-b border-[#f1f5f9]">
             <div className="relative">

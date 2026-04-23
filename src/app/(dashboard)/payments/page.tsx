@@ -97,7 +97,7 @@ export default function PaymentsPage() {
   return (
     <div className="space-y-6 animate-fade-in">
       {/* ── Header ── */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <h1
             className="text-[28px] font-bold text-[#1e293b] leading-tight"
@@ -109,7 +109,7 @@ export default function PaymentsPage() {
             {patient_txs.length} transactions · {fmtLKR(totalRevenue)} collected
           </p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
           <Button variant="secondary" size="sm" leftIcon={<Filter className="w-3.5 h-3.5" />}
             onClick={() => toast.info("Advanced filters coming soon!")}>
             Filter
@@ -123,7 +123,7 @@ export default function PaymentsPage() {
       </div>
 
       {/* ── Stat cards ── */}
-      <div className="grid grid-cols-4 gap-4 stagger">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 stagger">
         {[
           { label: "Total collected",  value: fmtLKR(totalRevenue),   icon: TrendingUp,    bg: "bg-[#dcfce7]", ic: "text-[#16a34a]", delta: "+12% vs last month", pos: true },
           { label: "April revenue",    value: fmtLKR(aprilRevenue),   icon: ArrowUpRight,  bg: "bg-[#ccfbf1]", ic: "text-[#0f766e]", delta: "Month to date",       pos: true },
@@ -150,7 +150,7 @@ export default function PaymentsPage() {
         ))}
       </div>
 
-      <div className="grid grid-cols-[1fr_320px] gap-5 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-5 items-start">
         {/* ── Transactions table ── */}
         <div className="bg-white border border-[#e2e8f0] rounded-[14px] overflow-hidden">
           {/* Filters row */}
@@ -180,6 +180,8 @@ export default function PaymentsPage() {
             </div>
           </div>
 
+          <div className="overflow-x-auto">
+            <div className="min-w-[700px]">
           {/* Table head */}
           <div className="grid gap-4 px-5 py-2.5 bg-[#f8fafc] border-b border-[#e2e8f0]"
             style={{ gridTemplateColumns: "1fr 90px 90px 110px 100px 60px" }}>
@@ -224,6 +226,8 @@ export default function PaymentsPage() {
                 <span className="text-[11px] text-[#94a3b8]">{methodLabel(tx.method)}</span>
               </div>
             ))}
+          </div>
+            </div>
           </div>
         </div>
 

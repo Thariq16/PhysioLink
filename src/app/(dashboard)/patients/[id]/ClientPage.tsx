@@ -82,8 +82,8 @@ export function PatientDetailClient() {
 
       {/* ── Patient Header Card ── */}
       <div className="bg-white border border-[#e2e8f0] rounded-[14px] p-6">
-        <div className="flex items-start justify-between">
-          <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <div className="w-16 h-16 rounded-full bg-[#ccfbf1] text-[#0f766e] flex items-center justify-center text-[22px] font-bold flex-shrink-0"
               style={{ fontFamily: "var(--font-syne, Syne, sans-serif)" }}>
               {patient.initials}
@@ -107,7 +107,7 @@ export function PatientDetailClient() {
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
             <Button variant="secondary" size="sm" leftIcon={<MessageSquare className="w-3.5 h-3.5" />}
               onClick={() => toast.success(`Opening chat with ${patient.name}…`)}
             >
@@ -125,7 +125,7 @@ export function PatientDetailClient() {
         </div>
 
         {/* Quick stats row */}
-        <div className="grid grid-cols-4 gap-4 mt-5 pt-5 border-t border-[#f1f5f9]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-5 pt-5 border-t border-[#f1f5f9]">
           <div>
             <div className="text-[11px] font-bold uppercase tracking-widest text-[#94a3b8] mb-1">Adherence</div>
             <div className="text-[22px] font-bold text-[#16a34a]"
@@ -169,7 +169,7 @@ export function PatientDetailClient() {
         </div>
 
         {activeTab === "overview" && (
-          <div className="p-6 grid grid-cols-2 gap-6">
+          <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Injury summary */}
             <div>
               <h3
@@ -249,7 +249,7 @@ export function PatientDetailClient() {
             <p className="text-[14px] font-semibold text-[#1e293b] mb-4">Appointment History</p>
             <div className="space-y-3">
               {appointments.map((a, i) => (
-                <div key={i} className="flex items-center justify-between bg-[#f8fafc] border border-[#e2e8f0] rounded-[12px] px-4 py-3">
+                <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between bg-[#f8fafc] border border-[#e2e8f0] rounded-[12px] px-4 py-3 gap-2">
                   <div>
                     <div className="text-[14px] font-semibold text-[#1e293b]">{a.date}</div>
                     <div className="text-[12px] text-[#94a3b8]">{a.time} · {a.duration} min</div>
@@ -325,7 +325,8 @@ export function PatientDetailClient() {
           </h2>
           <Button variant="ghost" size="sm">View all</Button>
         </div>
-        <div className="divide-y divide-[#f1f5f9]">
+        <div className="overflow-x-auto">
+          <div className="min-w-[600px] divide-y divide-[#f1f5f9]">
           {appointments.map((a, i) => (
             <div key={i} className="grid grid-cols-[1fr_80px_80px_100px_80px] gap-4 px-6 py-3.5 items-center">
               <div>
@@ -350,6 +351,7 @@ export function PatientDetailClient() {
               </div>
             </div>
           ))}
+          </div>
         </div>
       </div>
     </div>

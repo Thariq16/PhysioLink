@@ -78,7 +78,7 @@ export default function DashboardPage() {
   return (
     <div className="space-y-8 animate-fade-in">
       {/* ── Header ── */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-0 justify-between">
         <div>
           <h1
             className="text-[28px] font-bold text-[#1e293b] leading-tight"
@@ -104,7 +104,7 @@ export default function DashboardPage() {
       </div>
 
       {/* ── Stat Cards ── */}
-      <div className="grid grid-cols-3 gap-4 stagger">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 stagger">
         {stats.map(({ label, value, delta, deltaPositive, icon: Icon, iconBg, iconColor, href }) => (
           <div
             key={label}
@@ -145,7 +145,10 @@ export default function DashboardPage() {
           </Button>
         </div>
 
-        {/* Table header */}
+        {/* Table wrapper for mobile scrolling */}
+        <div className="overflow-x-auto">
+          <div className="min-w-[700px]">
+            {/* Table header */}
         <div className="grid grid-cols-[1fr_100px_100px_120px_40px] gap-4 px-6 py-2.5 bg-[#f8fafc] border-b border-[#e2e8f0]">
           {["Patient", "Time", "Adherence", "Status", ""].map((h) => (
             <span key={h} className="text-[10px] font-bold uppercase tracking-widest text-[#94a3b8]">
@@ -186,10 +189,12 @@ export default function DashboardPage() {
             </div>
           ))}
         </div>
+          </div>
+        </div>
       </div>
 
       {/* ── Quick Stats Bottom Row ── */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="bg-white border border-[#e2e8f0] rounded-[14px] p-5 flex items-center gap-4">
           <div className="w-10 h-10 rounded-xl bg-[#ede9fe] flex items-center justify-center flex-shrink-0">
             <AlertCircle className="w-5 h-5 text-[#7c3aed]" />

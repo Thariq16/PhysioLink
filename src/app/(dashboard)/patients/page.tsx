@@ -78,7 +78,7 @@ export default function PatientsPage() {
   return (
     <div className="space-y-6 animate-fade-in">
       {/* ── Header ── */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-0 justify-between">
         <div>
           <h1
             className="text-[28px] font-bold text-[#1e293b] leading-tight"
@@ -97,8 +97,8 @@ export default function PatientsPage() {
       </div>
 
       {/* ── Filters bar ── */}
-      <div className="flex items-center gap-3">
-        <div className="relative flex-1 max-w-[320px]">
+      <div className="flex flex-col md:flex-row items-stretch md:items-center gap-3">
+        <div className="relative flex-1 w-full md:max-w-[320px]">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94a3b8]" />
           <input
             type="search"
@@ -128,6 +128,8 @@ export default function PatientsPage() {
 
       {/* ── Table ── */}
       <div className="bg-white border border-[#e2e8f0] rounded-[14px] overflow-hidden">
+        <div className="overflow-x-auto">
+          <div className="min-w-[800px]">
         {/* Table Head */}
         <div className="grid grid-cols-[2fr_1.5fr_1fr_1fr_1fr_80px] gap-4 px-6 py-3 bg-[#f8fafc] border-b border-[#e2e8f0]">
           {[
@@ -187,6 +189,8 @@ export default function PatientsPage() {
               </div>
             </Link>
           ))}
+        </div>
+          </div>
         </div>
       </div>
 

@@ -61,7 +61,7 @@ type InviteData  = z.infer<typeof inviteSchema>;
 /* ─── Step indicator bar ─── */
 function OnboardStepBar({ current }: { current: number }) {
   return (
-    <div className="flex items-center justify-center gap-3 mb-10">
+    <div className="flex flex-wrap sm:flex-nowrap items-center justify-center gap-2 sm:gap-3 mb-10">
       {STEPS.map(({ id, label, icon: Icon }) => (
         <div key={id} className="flex items-center gap-3">
           <div className="flex flex-col items-center gap-1">
@@ -139,7 +139,7 @@ function WelcomeStep({ onNext }: { onNext: () => void }) {
       </div>
 
       {/* Feature highlights */}
-      <div className="grid grid-cols-3 gap-4 max-w-[480px] mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-[480px] mx-auto">
         {[
           { emoji: "📅", label: "Smart appointments", desc: "Drag-and-drop calendar" },
           { emoji: "💪", label: "Exercise builder",   desc: "Assign rehab plans fast" },
@@ -191,7 +191,7 @@ function ProfileStep({ onNext, onBack }: { onNext: () => void; onBack: () => voi
         <p className="text-[13px] text-[#64748b] mt-1">This is displayed to your patients and on reports.</p>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <FormField label="First name" error={errors.firstName?.message}>
           <TextInput {...register("firstName")} placeholder="Theebaluxmy" />
         </FormField>
@@ -210,7 +210,7 @@ function ProfileStep({ onNext, onBack }: { onNext: () => void; onBack: () => voi
         </select>
       </FormField>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <FormField label="Registration number" hint="Your SLCPT or equivalent"
           error={errors.regNumber?.message}>
           <TextInput {...register("regNumber")} placeholder="SL-PHYSIO-XXXXX" />
@@ -256,7 +256,7 @@ function ClinicStep({ onNext, onBack }: { onNext: () => void; onBack: () => void
         </div>
       </FormField>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <FormField label="City" error={errors.city?.message}>
           <TextInput {...register("city")} placeholder="Colombo" />
         </FormField>
@@ -336,7 +336,7 @@ function SubscriptionStep({ onNext, onBack }: { onNext: () => void; onBack: () =
         <p className="text-[13px] text-[#64748b] mt-1">All plans include a 3-month free trial. No credit card required now.</p>
       </div>
 
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
         {PLANS.map((plan) => (
           <button
             key={plan.id}
@@ -423,7 +423,7 @@ function InviteStep({ onBack }: { onBack: () => void }) {
             Your invite link has been sent. Your patient will receive an SMS to download the PhysioLink app.
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-3 max-w-[420px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-[420px] mx-auto">
           {[
             { label: "Profile", done: true },
             { label: "Clinic",  done: true },
@@ -531,7 +531,7 @@ export default function OnboardPage() {
         "bg-white border border-[#e2e8f0] rounded-2xl shadow-sm w-full animate-fade-in",
         step === 3 ? "max-w-[760px]" : "max-w-[560px]"
       )}>
-        <div className="p-7">
+        <div className="p-4 sm:p-7">
           {step === 0 && <WelcomeStep onNext={next} />}
           {step === 1 && <ProfileStep onNext={next} onBack={back} />}
           {step === 2 && <ClinicStep  onNext={next} onBack={back} />}

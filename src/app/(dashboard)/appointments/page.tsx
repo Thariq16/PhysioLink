@@ -148,7 +148,7 @@ function NewAppointmentModal({
           </div>
 
           {/* Date + Time */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label className="block text-[12px] font-semibold text-[#475569] mb-1.5 tracking-wide">Date</label>
               <input
@@ -345,7 +345,7 @@ export default function AppointmentsPage() {
 
       <div className="space-y-5 animate-fade-in">
         {/* ── Header ── */}
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-[28px] font-bold text-[#1e293b] leading-tight"
               style={{ fontFamily: "var(--font-syne, Syne, sans-serif)" }}>
@@ -355,7 +355,7 @@ export default function AppointmentsPage() {
               {todayAppts.length} today · {weekAppts.length} this week
             </p>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
             {/* View toggle */}
             <div className="flex border border-[#e2e8f0] rounded-[10px] overflow-hidden bg-white">
               {(["week", "list"] as const).map((v) => (
@@ -380,7 +380,7 @@ export default function AppointmentsPage() {
         </div>
 
         {/* ── Stats row ── */}
-        <div className="grid grid-cols-4 gap-3 stagger">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 stagger">
           {[
             { label: "Today",       value: String(todayAppts.length),  icon: Calendar,     bg: "bg-[#dbeafe]", ic: "text-[#2563eb]" },
             { label: "This week",   value: String(weekAppts.length),   icon: Calendar,     bg: "bg-[#ccfbf1]", ic: "text-[#0f766e]" },
@@ -433,6 +433,8 @@ export default function AppointmentsPage() {
         {/* ── Week View ── */}
         {view === "week" && (
           <div className="bg-white border border-[#e2e8f0] rounded-[14px] overflow-hidden">
+            <div className="overflow-x-auto">
+              <div className="min-w-[800px]">
             {/* Day header row */}
             <div className="grid border-b border-[#e2e8f0]" style={{ gridTemplateColumns: "56px repeat(7, 1fr)" }}>
               <div className="border-r border-[#e2e8f0] bg-[#f8fafc]" />
@@ -509,12 +511,16 @@ export default function AppointmentsPage() {
                 </div>
               ))}
             </div>
+              </div>
+            </div>
           </div>
         )}
 
         {/* ── List View ── */}
         {view === "list" && (
           <div className="bg-white border border-[#e2e8f0] rounded-[14px] overflow-hidden">
+            <div className="overflow-x-auto">
+              <div className="min-w-[700px]">
             <div className="grid grid-cols-[1fr_100px_160px_100px_80px] gap-4 px-6 py-3 bg-[#f8fafc] border-b border-[#e2e8f0]">
               {["Patient", "Time", "Date", "Status", "Fee"].map((h) => (
                 <span key={h} className="text-[10px] font-bold uppercase tracking-widest text-[#94a3b8]">{h}</span>
@@ -545,6 +551,8 @@ export default function AppointmentsPage() {
                     <span className="text-[13px] text-[#64748b]">{appt.fee}</span>
                   </div>
                 ))}
+            </div>
+              </div>
             </div>
           </div>
         )}

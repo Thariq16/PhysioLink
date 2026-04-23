@@ -111,7 +111,7 @@ function ClinicTab() {
       {/* Personal info */}
       <div>
         <h3 className="text-[13px] font-bold text-[#94a3b8] uppercase tracking-wider mb-4">Personal Information</h3>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Field label="First name"><Input defaultValue="Theebaluxmy" /></Field>
           <Field label="Last name"><Input defaultValue="Thangarasu" /></Field>
           <Field label="Specialisation"><Input defaultValue="Sports & Rehabilitation" /></Field>
@@ -124,7 +124,7 @@ function ClinicTab() {
       {/* Clinic info */}
       <div>
         <h3 className="text-[13px] font-bold text-[#94a3b8] uppercase tracking-wider mb-4">Clinic Details</h3>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Field label="Clinic name" className="col-span-2"><Input defaultValue="Thangarasu Physiotherapy Centre" /></Field>
           <Field label="Address line 1"><Input defaultValue="45 Galle Road" /></Field>
           <Field label="Address line 2"><Input defaultValue="Colombo 03" /></Field>
@@ -157,7 +157,7 @@ function SubscriptionTab() {
           </div>
           <span className="px-3 py-1 bg-[#0d9488] text-white text-[11px] font-bold rounded-full">ACTIVE</span>
         </div>
-        <div className="grid grid-cols-3 gap-3 mt-4 pt-4 border-t border-white/10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4 pt-4 border-t border-white/10">
           {[
             { label: "Monthly price", value: "LKR 2,990" },
             { label: "Patients",      value: "Unlimited" },
@@ -196,7 +196,7 @@ function SubscriptionTab() {
       </div>
 
       {/* Billing actions */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="bg-white border border-[#e2e8f0] rounded-[14px] p-4">
           <h4 className="text-[13px] font-bold text-[#1e293b] mb-1">Payment method</h4>
           <div className="flex items-center gap-2 mt-2">
@@ -250,6 +250,8 @@ function AvailabilityTab() {
 
       {/* Grid */}
       <div className="bg-white border border-[#e2e8f0] rounded-[14px] overflow-hidden">
+        <div className="overflow-x-auto">
+          <div className="min-w-[600px]">
         {/* Header */}
         <div className="grid border-b border-[#e2e8f0]" style={{ gridTemplateColumns: "80px repeat(11, 1fr)" }}>
           <div className="bg-[#f8fafc] border-r border-[#e2e8f0]" />
@@ -291,6 +293,8 @@ function AvailabilityTab() {
             </div>
           );
         })}
+          </div>
+        </div>
       </div>
 
       {/* Legend */}
@@ -480,7 +484,7 @@ export default function SettingsPage() {
         <p className="text-[14px] text-[#64748b] mt-0.5">Manage your clinic, subscription, and preferences</p>
       </div>
 
-      <div className="grid grid-cols-[220px_1fr] gap-6 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-6 items-start">
         {/* ── Vertical tab nav ── */}
         <div className="bg-white border border-[#e2e8f0] rounded-[14px] overflow-hidden">
           {TABS.map(({ id, label, icon: Icon }) => (

@@ -131,7 +131,7 @@ function NewPlanModal({ open, onClose }: { open: boolean; onClose: () => void })
 
           <div>
             <label className="block text-[12px] font-semibold text-[#475569] mb-2 tracking-wide">Add exercises from library</label>
-            <div className="grid grid-cols-2 gap-2 max-h-[200px] overflow-y-auto pr-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-[200px] overflow-y-auto pr-1">
               {EXERCISE_LIBRARY.map((ex) => (
                 <div key={ex.name} className="border border-[#e2e8f0] rounded-[10px] p-3 hover:border-[#0d9488] cursor-pointer transition-colors">
                   <p className="text-[13px] font-semibold text-[#1e293b]">{ex.name}</p>
@@ -181,7 +181,7 @@ export default function ExercisesPage() {
 
       <div className="space-y-6 animate-fade-in">
         {/* ── Header ── */}
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-[28px] font-bold text-[#1e293b] leading-tight" style={{ fontFamily: "var(--font-syne, Syne, sans-serif)" }}>
               Exercises
@@ -194,7 +194,7 @@ export default function ExercisesPage() {
         </div>
 
         {/* ── Stat cards ── */}
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             { label: "Active Plans",      value: String(activePlans),    icon: Dumbbell,     bg: "bg-[#ccfbf1]", ic: "text-[#0f766e]" },
             { label: "Avg Adherence",     value: `${avgAdherence}%`,     icon: TrendingUp,   bg: "bg-[#dcfce7]", ic: "text-[#16a34a]" },
@@ -213,7 +213,7 @@ export default function ExercisesPage() {
         </div>
 
         {/* ── Search bar ── */}
-        <div className="relative max-w-[340px]">
+        <div className="relative w-full sm:max-w-[340px]">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94a3b8]" />
           <input
             type="search"
@@ -226,6 +226,8 @@ export default function ExercisesPage() {
 
         {/* ── Plans table ── */}
         <div className="bg-white border border-[#e2e8f0] rounded-[14px] overflow-hidden">
+          <div className="overflow-x-auto">
+            <div className="min-w-[900px]">
           <div className="grid gap-4 px-6 py-3 bg-[#f8fafc] border-b border-[#e2e8f0]" style={{ gridTemplateColumns: "2fr 1.5fr 80px 80px 120px 120px 40px" }}>
             {["Patient", "Plan", "Exercises", "Today", "Adherence", "Status", ""].map((h) => (
               <span key={h} className="text-[10px] font-bold uppercase tracking-widest text-[#94a3b8]">{h}</span>
@@ -280,6 +282,8 @@ export default function ExercisesPage() {
                 </div>
               </div>
             ))}
+          </div>
+            </div>
           </div>
         </div>
 

@@ -24,11 +24,11 @@ import { cn } from "@/lib/utils";
 // ── Mock patient data ──
 const patient = {
   id: "p1",
-  name: "Thariq Hamad",
-  initials: "TH",
+  name: "Imran Rashid",
+  initials: "IR",
   dob: "14 Mar 1990 (36 yrs)",
   phone: "+94 77 234 5678",
-  email: "Thariq@thariqhamad.com",
+  email: "imran.rashid@example.com",
   injurySummary: "Grade 3 ACL tear on right knee following football match injury. Post-surgical recovery commenced 6 weeks ago. Good range of motion improving steadily.",
   treatmentNotes: "Patient is responding well. Increase quad strength exercises from week 8. Pain level reported at 2/10 during last session.",
   adherence: 86,
@@ -292,7 +292,7 @@ export function PatientDetailClient() {
             <MessageSquare className="w-10 h-10 text-[#cbd5e1] mx-auto mb-3" />
             <p className="text-[14px] font-semibold text-[#1e293b]">Chat with {patient.name}</p>
             <p className="text-[13px] text-[#94a3b8] mt-1">Go to the Messages page to view the full conversation thread.</p>
-            <Button className="mt-4" size="sm" onClick={() => toast.info("Navigate to Messages → Ravi Jayasuriya")}>
+            <Button className="mt-4" size="sm" onClick={() => toast.info("Navigate to Messages → Nimal Fernando")}>
               Open conversation
             </Button>
           </div>

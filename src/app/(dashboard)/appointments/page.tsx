@@ -49,15 +49,15 @@ const mkDate = (dayOffset: number, h: number, m = 0) => {
 };
 
 const APPOINTMENTS: Appointment[] = [
-  { id: "a1", patientName: "Ravi Jayasuriya",   initials: "RJ", date: mkDate(0, 10),     startHour: 10, startMin: 0,  durationMin: 45, status: "confirmed",  fee: "LKR 3,500" },
-  { id: "a2", patientName: "Amara Perera",      initials: "AP", date: mkDate(0, 11, 30), startHour: 11, startMin: 30, durationMin: 45, status: "scheduled",  fee: "LKR 3,500" },
-  { id: "a3", patientName: "Dinesh Silva",      initials: "DS", date: mkDate(0, 14),     startHour: 14, startMin: 0,  durationMin: 60, status: "scheduled",  fee: "LKR 3,500" },
-  { id: "a4", patientName: "Priya Rathnayake", initials: "PR", date: mkDate(1, 9),      startHour: 9,  startMin: 0,  durationMin: 45, status: "confirmed",  fee: "LKR 3,500" },
-  { id: "a5", patientName: "Kasun Bandara",    initials: "KB", date: mkDate(1, 15),     startHour: 15, startMin: 0,  durationMin: 45, status: "scheduled",  fee: "LKR 3,500" },
-  { id: "a6", patientName: "Nilufar Hashim",   initials: "NH", date: mkDate(2, 10, 30), startHour: 10, startMin: 30, durationMin: 30, status: "confirmed",  fee: "LKR 3,500" },
-  { id: "a7", patientName: "Thariq Hamad",     initials: "TH", date: mkDate(3, 13),     startHour: 13, startMin: 0,  durationMin: 60, status: "scheduled",  fee: "LKR 3,500" },
-  { id: "a8", patientName: "Ravi Jayasuriya",  initials: "RJ", date: mkDate(-1, 10),    startHour: 10, startMin: 0,  durationMin: 45, status: "completed",  fee: "LKR 3,500" },
-  { id: "a9", patientName: "Amara Perera",     initials: "AP", date: mkDate(-2, 14),    startHour: 14, startMin: 0,  durationMin: 45, status: "cancelled",  fee: "LKR 3,500" },
+  { id: "a1", patientName: "Nimal Fernando",   initials: "NF", date: mkDate(0, 10),     startHour: 10, startMin: 0,  durationMin: 45, status: "confirmed",  fee: "LKR 3,500" },
+  { id: "a2", patientName: "Maya Wickrama",      initials: "MW", date: mkDate(0, 11, 30), startHour: 11, startMin: 30, durationMin: 45, status: "scheduled",  fee: "LKR 3,500" },
+  { id: "a3", patientName: "Dilan Herath",      initials: "DH", date: mkDate(0, 14),     startHour: 14, startMin: 0,  durationMin: 60, status: "scheduled",  fee: "LKR 3,500" },
+  { id: "a4", patientName: "Sanduni Karunaratne", initials: "SK", date: mkDate(1, 9),      startHour: 9,  startMin: 0,  durationMin: 45, status: "confirmed",  fee: "LKR 3,500" },
+  { id: "a5", patientName: "Chamara Dissanayake",    initials: "CD", date: mkDate(1, 15),     startHour: 15, startMin: 0,  durationMin: 45, status: "scheduled",  fee: "LKR 3,500" },
+  { id: "a6", patientName: "Farah Nazeer",   initials: "FN", date: mkDate(2, 10, 30), startHour: 10, startMin: 30, durationMin: 30, status: "confirmed",  fee: "LKR 3,500" },
+  { id: "a7", patientName: "Imran Rashid",     initials: "IR", date: mkDate(3, 13),     startHour: 13, startMin: 0,  durationMin: 60, status: "scheduled",  fee: "LKR 3,500" },
+  { id: "a8", patientName: "Nimal Fernando",  initials: "NF", date: mkDate(-1, 10),    startHour: 10, startMin: 0,  durationMin: 45, status: "completed",  fee: "LKR 3,500" },
+  { id: "a9", patientName: "Maya Wickrama",     initials: "MW", date: mkDate(-2, 14),    startHour: 14, startMin: 0,  durationMin: 45, status: "cancelled",  fee: "LKR 3,500" },
 ];
 
 /* ─────────────────────────── Helpers ───────────────────────── */
@@ -139,11 +139,11 @@ function NewAppointmentModal({
               className="w-full px-3.5 py-2.5 border border-[#e2e8f0] rounded-[10px] bg-white text-[14px] text-[#1e293b] focus:outline-none focus:border-[#0d9488] transition-colors"
             >
               <option value="">Select a patient…</option>
-              <option>Ravi Jayasuriya</option>
-              <option>Amara Perera</option>
-              <option>Dinesh Silva</option>
-              <option>Priya Rathnayake</option>
-              <option>Kasun Bandara</option>
+              <option>Nimal Fernando</option>
+              <option>Maya Wickrama</option>
+              <option>Dilan Herath</option>
+              <option>Sanduni Karunaratne</option>
+              <option>Chamara Dissanayake</option>
             </select>
           </div>
 

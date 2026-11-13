@@ -37,13 +37,13 @@ interface ExercisePlan {
 
 /* ── Mock Data ── */
 const PLANS: ExercisePlan[] = [
-  { id: "ep1", patientName: "Ravi Jayasuriya",   initials: "RJ", planName: "Knee Rehab Phase 2",   condition: "ACL Recovery",          exercises: 6, completed: 5, frequency: "Daily",      status: "active",    adherence: 86, lastActive: "Today" },
-  { id: "ep2", patientName: "Amara Perera",      initials: "AP", planName: "Core Strengthening",    condition: "Lower back pain",       exercises: 5, completed: 2, frequency: "5x / week",  status: "active",    adherence: 52, lastActive: "Yesterday" },
-  { id: "ep3", patientName: "Dinesh Silva",      initials: "DS", planName: "Shoulder Mobility",     condition: "Rotator cuff injury",   exercises: 4, completed: 1, frequency: "3x / week",  status: "active",    adherence: 24, lastActive: "3 days ago" },
-  { id: "ep4", patientName: "Priya Rathnayake",  initials: "PR", planName: "Ankle Stability",       condition: "Ankle sprain Grade 2",  exercises: 5, completed: 5, frequency: "Daily",      status: "active",    adherence: 91, lastActive: "Today" },
-  { id: "ep5", patientName: "Kasun Bandara",     initials: "KB", planName: "ACL Post-op Phase 1",   condition: "Post-op ACL",           exercises: 7, completed: 4, frequency: "4x / week",  status: "active",    adherence: 68, lastActive: "Today" },
-  { id: "ep6", patientName: "Thariq Hamad",      initials: "TH", planName: "Hamstring Recovery",    condition: "Hamstring strain",      exercises: 4, completed: 3, frequency: "Daily",      status: "active",    adherence: 78, lastActive: "Yesterday" },
-  { id: "ep7", patientName: "Nilufar Hashim",    initials: "NH", planName: "Cervical Mobility",     condition: "Cervical spondylosis",  exercises: 3, completed: 0, frequency: "3x / week",  status: "paused",    adherence: 0,  lastActive: "2 weeks ago" },
+  { id: "ep1", patientName: "Nimal Fernando",   initials: "NF", planName: "Knee Rehab Phase 2",   condition: "ACL Recovery",          exercises: 6, completed: 5, frequency: "Daily",      status: "active",    adherence: 86, lastActive: "Today" },
+  { id: "ep2", patientName: "Maya Wickrama",      initials: "MW", planName: "Core Strengthening",    condition: "Lower back pain",       exercises: 5, completed: 2, frequency: "5x / week",  status: "active",    adherence: 52, lastActive: "Yesterday" },
+  { id: "ep3", patientName: "Dilan Herath",      initials: "DH", planName: "Shoulder Mobility",     condition: "Rotator cuff injury",   exercises: 4, completed: 1, frequency: "3x / week",  status: "active",    adherence: 24, lastActive: "3 days ago" },
+  { id: "ep4", patientName: "Sanduni Karunaratne",  initials: "SK", planName: "Ankle Stability",       condition: "Ankle sprain Grade 2",  exercises: 5, completed: 5, frequency: "Daily",      status: "active",    adherence: 91, lastActive: "Today" },
+  { id: "ep5", patientName: "Chamara Dissanayake",     initials: "CD", planName: "ACL Post-op Phase 1",   condition: "Post-op ACL",           exercises: 7, completed: 4, frequency: "4x / week",  status: "active",    adherence: 68, lastActive: "Today" },
+  { id: "ep6", patientName: "Imran Rashid",      initials: "IR", planName: "Hamstring Recovery",    condition: "Hamstring strain",      exercises: 4, completed: 3, frequency: "Daily",      status: "active",    adherence: 78, lastActive: "Yesterday" },
+  { id: "ep7", patientName: "Farah Nazeer",    initials: "FN", planName: "Cervical Mobility",     condition: "Cervical spondylosis",  exercises: 3, completed: 0, frequency: "3x / week",  status: "paused",    adherence: 0,  lastActive: "2 weeks ago" },
 ];
 
 const EXERCISE_LIBRARY = [
@@ -110,11 +110,11 @@ function NewPlanModal({ open, onClose }: { open: boolean; onClose: () => void })
               className="w-full px-3.5 py-2.5 border border-[#e2e8f0] rounded-[10px] text-[14px] text-[#1e293b] focus:outline-none focus:border-[#0d9488] bg-white"
             >
               <option value="">Select a patient…</option>
-              <option>Ravi Jayasuriya</option>
-              <option>Amara Perera</option>
-              <option>Dinesh Silva</option>
-              <option>Priya Rathnayake</option>
-              <option>Kasun Bandara</option>
+              <option>Nimal Fernando</option>
+              <option>Maya Wickrama</option>
+              <option>Dilan Herath</option>
+              <option>Sanduni Karunaratne</option>
+              <option>Chamara Dissanayake</option>
             </select>
           </div>
 

@@ -41,10 +41,10 @@ const now = new Date();
 
 const THREADS: Thread[] = [
   {
-    id: "t1", patientName: "Ravi Jayasuriya", initials: "RJ", online: true,
+    id: "t1", patientName: "Nimal Fernando", initials: "NF", online: true,
     lastMessage: "Sure, I'll do the quad stretches tonight.", ts: subMinutes(now, 4), unread: 2,
     messages: [
-      { id: "m1", from: "physio",  text: "Hi Ravi, how is your knee feeling today?",              ts: subHours(now, 3),    read: true },
+      { id: "m1", from: "physio",  text: "Hi Nimal, how is your knee feeling today?",              ts: subHours(now, 3),    read: true },
       { id: "m2", from: "patient", text: "Much better, the swelling is down a lot!",              ts: subHours(now, 2.5),  read: true },
       { id: "m3", from: "physio",  text: "Great to hear! Remember to keep doing the ice packs twice a day.", ts: subHours(now, 2), read: true },
       { id: "m4", from: "patient", text: "Yes, doing them morning and night.",                    ts: subHours(now, 1.5),  read: true },
@@ -53,27 +53,27 @@ const THREADS: Thread[] = [
     ],
   },
   {
-    id: "t2", patientName: "Amara Perera", initials: "AP", online: false,
+    id: "t2", patientName: "Maya Wickrama", initials: "MW", online: false,
     lastMessage: "The pain is still at 4/10 when I bend forward.", ts: subHours(now, 1), unread: 1,
     messages: [
-      { id: "m1", from: "physio",  text: "Amara, how is your back today? Did you do the core exercises?", ts: subHours(now, 5), read: true },
+      { id: "m1", from: "physio",  text: "Maya, how is your back today? Did you do the core exercises?", ts: subHours(now, 5), read: true },
       { id: "m2", from: "patient", text: "I tried, but I had to stop halfway through the bird-dog.", ts: subHours(now, 4), read: true },
       { id: "m3", from: "physio",  text: "That's okay. Don't push too hard. What's your pain level?", ts: subHours(now, 3), read: true },
       { id: "m4", from: "patient", text: "The pain is still at 4/10 when I bend forward.",            ts: subHours(now, 1), read: false },
     ],
   },
   {
-    id: "t3", patientName: "Dinesh Silva", initials: "DS", online: true,
+    id: "t3", patientName: "Dilan Herath", initials: "DH", online: true,
     lastMessage: "Should I try the internal rotation today?", ts: subHours(now, 3), unread: 0,
     messages: [
-      { id: "m1", from: "physio",  text: "Good morning Dinesh. Can you rate your shoulder pain today?", ts: subDays(now, 1), read: true },
+      { id: "m1", from: "physio",  text: "Good morning Dilan. Can you rate your shoulder pain today?", ts: subDays(now, 1), read: true },
       { id: "m2", from: "patient", text: "Morning! About 6/10. It's sore at end range.",                ts: subDays(now, 1), read: true },
       { id: "m3", from: "physio",  text: "Let's hold off on overhead movements for now.",               ts: subHours(now, 5), read: true },
       { id: "m4", from: "patient", text: "Should I try the internal rotation today?",                   ts: subHours(now, 3), read: true },
     ],
   },
   {
-    id: "t4", patientName: "Priya Rathnayake", initials: "PR", online: false,
+    id: "t4", patientName: "Sanduni Karunaratne", initials: "SK", online: false,
     lastMessage: "Attached my progress photo from yesterday.", ts: subDays(now, 1), unread: 0,
     messages: [
       { id: "m1", from: "patient", text: "Hi Doctor! My ankle is feeling much stronger.",               ts: subDays(now, 2), read: true },
@@ -84,10 +84,10 @@ const THREADS: Thread[] = [
     ],
   },
   {
-    id: "t5", patientName: "Kasun Bandara", initials: "KB", online: false,
+    id: "t5", patientName: "Chamara Dissanayake", initials: "CD", online: false,
     lastMessage: "I watched the exercise video you sent.", ts: subDays(now, 2), unread: 0,
     messages: [
-      { id: "m1", from: "physio",  text: "Kasun, I have uploaded a new exercise video for your ACL rehab.", ts: subDays(now, 3), read: true },
+      { id: "m1", from: "physio",  text: "Chamara, I have uploaded a new exercise video for your ACL rehab.", ts: subDays(now, 3), read: true },
       { id: "m2", from: "patient", text: "I watched the exercise video you sent.",                          ts: subDays(now, 2), read: true },
     ],
   },

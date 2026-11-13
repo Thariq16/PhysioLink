@@ -193,10 +193,10 @@ function ProfileStep({ onNext, onBack }: { onNext: () => void; onBack: () => voi
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <FormField label="First name" error={errors.firstName?.message}>
-          <TextInput {...register("firstName")} placeholder="Theebaluxmy" />
+          <TextInput {...register("firstName")} placeholder="Anjali" />
         </FormField>
         <FormField label="Last name" error={errors.lastName?.message}>
-          <TextInput {...register("lastName")} placeholder="Thangarasu" />
+          <TextInput {...register("lastName")} placeholder="Mahendran" />
         </FormField>
       </div>
 
@@ -245,7 +245,7 @@ function ClinicStep({ onNext, onBack }: { onNext: () => void; onBack: () => void
       </div>
 
       <FormField label="Clinic name" error={errors.clinicName?.message}>
-        <TextInput {...register("clinicName")} placeholder="Thangarasu Physiotherapy Centre" />
+        <TextInput {...register("clinicName")} placeholder="Mahendran Physiotherapy Centre" />
       </FormField>
 
       <FormField label="Street address" error={errors.address?.message}>
@@ -456,7 +456,7 @@ function InviteStep({ onBack }: { onBack: () => void }) {
       </div>
 
       <FormField label="Patient full name" error={errors.patientName?.message}>
-        <TextInput {...register("patientName")} placeholder="e.g. Ravi Jayasuriya" />
+        <TextInput {...register("patientName")} placeholder="e.g. Nimal Fernando" />
       </FormField>
 
       <FormField label="Mobile number" hint="We'll send an SMS invite" error={errors.patientPhone?.message}>

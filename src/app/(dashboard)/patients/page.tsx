@@ -16,13 +16,13 @@ import { toast } from "sonner";
 
 // ── Mock data ──
 const patients = [
-  { id: "p1", name: "Ravi Jayasuriya",   initials: "RJ", condition: "Knee ligament tear",    adherence: 86, lastAppt: "9 Apr 2026",  nextAppt: "16 Apr 2026", status: "active",   plan: "Knee Rehab Phase 2" },
-  { id: "p2", name: "Amara Perera",      initials: "AP", condition: "Lower back pain",       adherence: 52, lastAppt: "7 Apr 2026",  nextAppt: "11 Apr 2026", status: "active",   plan: "Core Strengthening" },
-  { id: "p3", name: "Dinesh Silva",      initials: "DS", condition: "Rotator cuff injury",   adherence: 24, lastAppt: "5 Apr 2026",  nextAppt: "12 Apr 2026", status: "at-risk",  plan: "Shoulder Mobility" },
-  { id: "p4", name: "Priya Rathnayake", initials: "PR", condition: "Ankle sprain (Grade 2)", adherence: 91, lastAppt: "8 Apr 2026",  nextAppt: "15 Apr 2026", status: "active",   plan: "Ankle Stability" },
-  { id: "p5", name: "Kasun Bandara",    initials: "KB", condition: "Post-op ACL recovery",   adherence: 68, lastAppt: "6 Apr 2026",  nextAppt: "13 Apr 2026", status: "active",   plan: "ACL Post-op Phase 1" },
-  { id: "p6", name: "Nilufar Hashim",   initials: "NH", condition: "Cervical spondylosis",   adherence: 0,  lastAppt: "1 Apr 2026",  nextAppt: "—",           status: "inactive", plan: "—" },
-  { id: "p7", name: "Thariq Hamad",     initials: "TH", condition: "Hamstring strain",       adherence: 78, lastAppt: "10 Apr 2026", nextAppt: "17 Apr 2026", status: "active",   plan: "Hamstring Recovery" },
+  { id: "p1", name: "Nimal Fernando",   initials: "NF", condition: "Knee ligament tear",    adherence: 86, lastAppt: "9 Apr 2026",  nextAppt: "16 Apr 2026", status: "active",   plan: "Knee Rehab Phase 2" },
+  { id: "p2", name: "Maya Wickrama",      initials: "MW", condition: "Lower back pain",       adherence: 52, lastAppt: "7 Apr 2026",  nextAppt: "11 Apr 2026", status: "active",   plan: "Core Strengthening" },
+  { id: "p3", name: "Dilan Herath",      initials: "DH", condition: "Rotator cuff injury",   adherence: 24, lastAppt: "5 Apr 2026",  nextAppt: "12 Apr 2026", status: "at-risk",  plan: "Shoulder Mobility" },
+  { id: "p4", name: "Sanduni Karunaratne", initials: "SK", condition: "Ankle sprain (Grade 2)", adherence: 91, lastAppt: "8 Apr 2026",  nextAppt: "15 Apr 2026", status: "active",   plan: "Ankle Stability" },
+  { id: "p5", name: "Chamara Dissanayake",    initials: "CD", condition: "Post-op ACL recovery",   adherence: 68, lastAppt: "6 Apr 2026",  nextAppt: "13 Apr 2026", status: "active",   plan: "ACL Post-op Phase 1" },
+  { id: "p6", name: "Farah Nazeer",   initials: "FN", condition: "Cervical spondylosis",   adherence: 0,  lastAppt: "1 Apr 2026",  nextAppt: "—",           status: "inactive", plan: "—" },
+  { id: "p7", name: "Imran Rashid",     initials: "IR", condition: "Hamstring strain",       adherence: 78, lastAppt: "10 Apr 2026", nextAppt: "17 Apr 2026", status: "active",   plan: "Hamstring Recovery" },
 ];
 
 function adherenceColor(val: number) {

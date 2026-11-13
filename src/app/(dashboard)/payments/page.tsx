@@ -36,17 +36,17 @@ interface Transaction {
 
 /* ─── Mock data ─── */
 const TRANSACTIONS: Transaction[] = [
-  { id: "tx001", patientName: "Ravi Jayasuriya",   initials: "RJ", date: "10 Apr 2026", amount: 3500, type: "appointment",   status: "paid",     method: "card",          invoice: "INV-001" },
-  { id: "tx002", patientName: "Amara Perera",      initials: "AP", date: "9 Apr 2026",  amount: 3500, type: "appointment",   status: "pending",  method: "payhere",       invoice: "INV-002" },
-  { id: "tx003", patientName: "Priya Rathnayake", initials: "PR", date: "8 Apr 2026",  amount: 3500, type: "consultation",  status: "paid",     method: "card",          invoice: "INV-003" },
-  { id: "tx004", patientName: "Kasun Bandara",    initials: "KB", date: "7 Apr 2026",  amount: 3500, type: "appointment",   status: "paid",     method: "cash",          invoice: "INV-004" },
-  { id: "tx005", patientName: "Dinesh Silva",      initials: "DS", date: "6 Apr 2026",  amount: 3500, type: "appointment",   status: "refunded", method: "card",          invoice: "INV-005" },
-  { id: "tx006", patientName: "Nilufar Hashim",   initials: "NH", date: "5 Apr 2026",  amount: 3500, type: "consultation",  status: "paid",     method: "bank-transfer", invoice: "INV-006" },
-  { id: "tx007", patientName: "Thariq Hamad",     initials: "TH", date: "4 Apr 2026",  amount: 3500, type: "appointment",   status: "paid",     method: "payhere",       invoice: "INV-007" },
-  { id: "tx008", patientName: "Ravi Jayasuriya",  initials: "RJ", date: "2 Apr 2026",  amount: 3500, type: "appointment",   status: "paid",     method: "card",          invoice: "INV-008" },
-  { id: "tx009", patientName: "Amara Perera",     initials: "AP", date: "1 Apr 2026",  amount: 3500, type: "consultation",  status: "paid",     method: "card",          invoice: "INV-009" },
-  { id: "tx010", patientName: "Priya Rathnayake", initials: "PR", date: "28 Mar 2026", amount: 3500, type: "appointment",   status: "pending",  method: "payhere",       invoice: "INV-010" },
-  { id: "tx011", patientName: "Dr. Priya",        initials: "ME", date: "1 Apr 2026",  amount: 29900, type: "subscription",  status: "paid",     method: "card",          invoice: "INV-SUB-004" },
+  { id: "tx001", patientName: "Nimal Fernando",   initials: "NF", date: "10 Apr 2026", amount: 3500, type: "appointment",   status: "paid",     method: "card",          invoice: "INV-001" },
+  { id: "tx002", patientName: "Maya Wickrama",      initials: "MW", date: "9 Apr 2026",  amount: 3500, type: "appointment",   status: "pending",  method: "payhere",       invoice: "INV-002" },
+  { id: "tx003", patientName: "Sanduni Karunaratne", initials: "SK", date: "8 Apr 2026",  amount: 3500, type: "consultation",  status: "paid",     method: "card",          invoice: "INV-003" },
+  { id: "tx004", patientName: "Chamara Dissanayake",    initials: "CD", date: "7 Apr 2026",  amount: 3500, type: "appointment",   status: "paid",     method: "cash",          invoice: "INV-004" },
+  { id: "tx005", patientName: "Dilan Herath",      initials: "DH", date: "6 Apr 2026",  amount: 3500, type: "appointment",   status: "refunded", method: "card",          invoice: "INV-005" },
+  { id: "tx006", patientName: "Farah Nazeer",   initials: "FN", date: "5 Apr 2026",  amount: 3500, type: "consultation",  status: "paid",     method: "bank-transfer", invoice: "INV-006" },
+  { id: "tx007", patientName: "Imran Rashid",     initials: "IR", date: "4 Apr 2026",  amount: 3500, type: "appointment",   status: "paid",     method: "payhere",       invoice: "INV-007" },
+  { id: "tx008", patientName: "Nimal Fernando",  initials: "NF", date: "2 Apr 2026",  amount: 3500, type: "appointment",   status: "paid",     method: "card",          invoice: "INV-008" },
+  { id: "tx009", patientName: "Maya Wickrama",     initials: "MW", date: "1 Apr 2026",  amount: 3500, type: "consultation",  status: "paid",     method: "card",          invoice: "INV-009" },
+  { id: "tx010", patientName: "Sanduni Karunaratne", initials: "SK", date: "28 Mar 2026", amount: 3500, type: "appointment",   status: "pending",  method: "payhere",       invoice: "INV-010" },
+  { id: "tx011", patientName: "Dr. Anjali",        initials: "AM", date: "1 Apr 2026",  amount: 29900, type: "subscription",  status: "paid",     method: "card",          invoice: "INV-SUB-004" },
 ];
 
 const PAYOUTS = [

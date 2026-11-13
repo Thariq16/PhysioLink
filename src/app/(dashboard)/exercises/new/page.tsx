@@ -46,11 +46,11 @@ type PlanData = z.infer<typeof planSchema>;
 
 /* ─────────────────────────── Constants ───────────────────────── */
 const PATIENTS = [
-  { id: "p1", name: "Ravi Jayasuriya",   condition: "Knee ligament tear" },
-  { id: "p2", name: "Amara Perera",      condition: "Lower back pain" },
-  { id: "p3", name: "Dinesh Silva",      condition: "Rotator cuff injury" },
-  { id: "p4", name: "Priya Rathnayake", condition: "Ankle sprain (Grade 2)" },
-  { id: "p5", name: "Kasun Bandara",    condition: "Post-op ACL recovery" },
+  { id: "p1", name: "Nimal Fernando",   condition: "Knee ligament tear" },
+  { id: "p2", name: "Maya Wickrama",      condition: "Lower back pain" },
+  { id: "p3", name: "Dilan Herath",      condition: "Rotator cuff injury" },
+  { id: "p4", name: "Sanduni Karunaratne", condition: "Ankle sprain (Grade 2)" },
+  { id: "p5", name: "Chamara Dissanayake",    condition: "Post-op ACL recovery" },
 ];
 
 const FREQ_OPTIONS = ["Daily", "2x / week", "3x / week", "4x / week", "5x / week", "Every other day"];

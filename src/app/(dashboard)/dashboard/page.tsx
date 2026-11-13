@@ -50,11 +50,11 @@ const stats = [
 ];
 
 const todayAppointments = [
-  { id: "p1", patientName: "Ravi Jayasuriya",   initials: "RJ", time: "10:00 AM", adherence: 86, status: "confirmed" },
-  { id: "p2", patientName: "Amara Perera",      initials: "AP", time: "11:30 AM", adherence: 52, status: "pending"   },
-  { id: "p3", patientName: "Dinesh Silva",      initials: "DS", time: "2:00 PM",  adherence: 24, status: "scheduled" },
-  { id: "p4", patientName: "Priya Rathnayake",  initials: "PR", time: "3:30 PM",  adherence: 91, status: "confirmed" },
-  { id: "p5", patientName: "Kasun Bandara",     initials: "KB", time: "5:00 PM",  adherence: 68, status: "scheduled" },
+  { id: "p1", patientName: "Nimal Fernando",   initials: "NF", time: "10:00 AM", adherence: 86, status: "confirmed" },
+  { id: "p2", patientName: "Maya Wickrama",      initials: "MW", time: "11:30 AM", adherence: 52, status: "pending"   },
+  { id: "p3", patientName: "Dilan Herath",      initials: "DH", time: "2:00 PM",  adherence: 24, status: "scheduled" },
+  { id: "p4", patientName: "Sanduni Karunaratne",  initials: "SK", time: "3:30 PM",  adherence: 91, status: "confirmed" },
+  { id: "p5", patientName: "Chamara Dissanayake",     initials: "CD", time: "5:00 PM",  adherence: 68, status: "scheduled" },
 ];
 
 function adherenceColor(val: number) {
@@ -84,7 +84,7 @@ export default function DashboardPage() {
             className="text-[28px] font-bold text-[#1e293b] leading-tight"
             style={{ fontFamily: "var(--font-syne, Syne, sans-serif)" }}
           >
-            {greeting}, Dr. Theebaluxmy
+            {greeting}, Dr. Anjali
           </h1>
           <p className="text-[14px] text-[#64748b] mt-0.5">
             {now.toLocaleDateString("en-US", {
